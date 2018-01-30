@@ -3,8 +3,7 @@
 
 CREATE TABLE liga.employee (
   id             BIGSERIAL PRIMARY KEY,
-  fisrt_name     VARCHAR(200),
-  last_name      VARCHAR(200),
+  fio            VARCHAR(400),
   gender         VARCHAR(100),
   faculty        VARCHAR(200),
   degree         VARCHAR(200),

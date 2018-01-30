@@ -1,17 +1,12 @@
 --liquibase formatted sql logicalFilePath:V1_007_DEPARTMENT_DATA.sql
 --changeset sanasov:1.7 runOnChange:true context:prod
 
-INSERT INTO liga.category_event (title, description) VALUES ('В первый раз', 'События, которые произошли впервые');
-INSERT INTO liga.category_event (title, description)
-VALUES ('Последние события', 'Например, последний раз был у бабушки в июне 2016');
 
+INSERT INTO liga.department (id, title,  address, foundation_year)
+VALUES (1, "Механико-математический", "119991, ГСП-1, Москва, Ленинские горы, МГУ, д.1, Главное здание, механико-математический факультет", 1932);
 
-INSERT INTO liga.event (category_id, title, description, date_time)
-VALUES (1, 'В первый раз был на море', 'Мы отдыхали в Лазаревском 10 дней', '1995-07-27 16:17:59.195591');
-INSERT INTO liga.event (category_id, title, description, date_time)
-VALUES (2, 'Полседний раз был у бабушки', 'Приехал к ней, когда была свадьба у Статса', '2016-09-26 16:17:59.267493');
+INSERT INTO liga.department (id, title,  address, foundation_date)
+VALUES (2, "Физический", "119991, Москва, ГСП-1, Ленинские горы, МГУ, д. 1, стр. 2, Физический факультет", 1933);
 
-INSERT INTO liga.event (category_id, title, description, date_time)
-VALUES (1, 'Пример в первый раз', '', '1995-07-27 16:17:59.195591');
-INSERT INTO liga.event (category_id, title, description, date_time)
-VALUES (2, 'Пример в последний раз', '', '2016-09-26 16:17:59.267493');
+INSERT INTO liga.department (id, title,  address, foundation_date)
+VALUES (3, "Исторический", "	119992, г. Москва, Ломоносовский проспект, д. 27, корп. 4, Исторический факультет МГУ", 1934);
