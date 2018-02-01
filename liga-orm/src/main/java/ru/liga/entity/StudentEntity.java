@@ -1,17 +1,19 @@
 package ru.liga.entity;
 
+import java.time.LocalDate;
+
 public class StudentEntity {
     private Long id;
     private String fio;
     private String gender;
     private String department;
     private String studentGroupId;
-    private String birthday;
+    private LocalDate birthday;
 
     public StudentEntity() {
     }
 
-    public StudentEntity(Long id, String fio, String gender, String faculty, String studentGroupId, String birthday) {
+    public StudentEntity(Long id, String fio, String gender, String faculty, String studentGroupId, LocalDate birthday) {
         this.id = id;
         this.fio = fio;
         this.gender = gender;
@@ -60,11 +62,11 @@ public class StudentEntity {
         this.studentGroupId = studentGroupId;
     }
 
-    public String getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 }

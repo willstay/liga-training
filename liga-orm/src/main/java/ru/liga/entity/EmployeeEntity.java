@@ -1,5 +1,7 @@
 package ru.liga.entity;
 
+import java.time.LocalDate;
+
 public class EmployeeEntity {
     private String id;
     private String fio;
@@ -7,9 +9,9 @@ public class EmployeeEntity {
     private String department;
     private String degree;
     private String position;
-    private String birthday;
+    private LocalDate birthday;
 
-    public EmployeeEntity(String id, String fio, String gender, String faculty, String degree, String position, String birthday) {
+    public EmployeeEntity(String id, String fio, String gender, String faculty, String degree, String position, LocalDate birthday) {
         this.id = id;
         this.fio = fio;
         this.gender = gender;
@@ -46,7 +48,7 @@ public class EmployeeEntity {
         return position;
     }
 
-    public String getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 }

@@ -1,7 +1,4 @@
 package ru.liga.entity;
-
-import ru.liga.domain.Employee;
-
 import java.util.List;
 
 public class DepartmentEntity {
