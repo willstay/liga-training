@@ -1,17 +1,25 @@
 package ru.liga.entity;
 
+import ru.liga.domain.Employee;
+
+import java.util.List;
+
 public class DepartmentEntity {
 
     private Long id;
     private String title;
     private String address;
     private Integer foundationYear;
+    private List<EmployeeEntity> employees;
+    private List<StudentEntity> students;
 
-    public DepartmentEntity(Long id, String title, String address, Integer foundationYear) {
+    public DepartmentEntity(Long id, String title, String address, Integer foundationYear, List<EmployeeEntity> employees, List<StudentEntity> students) {
         this.id = id;
         this.title = title;
         this.address = address;
         this.foundationYear = foundationYear;
+        this.employees = employees;
+        this.students = students;
     }
 
     public DepartmentEntity() {
@@ -47,5 +55,21 @@ public class DepartmentEntity {
 
     public void setFoundationYear(Integer foundationYear) {
         this.foundationYear = foundationYear;
+    }
+
+    public List<EmployeeEntity> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<EmployeeEntity> employees) {
+        this.employees = employees;
+    }
+
+    public List<StudentEntity> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StudentEntity> students) {
+        this.students = students;
     }
 }

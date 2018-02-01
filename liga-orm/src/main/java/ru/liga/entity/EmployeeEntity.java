@@ -4,7 +4,7 @@ public class EmployeeEntity {
     private String id;
     private String fio;
     private String gender;
-    private String faculty;
+    private String department;
     private String degree;
     private String position;
     private String birthday;
@@ -13,7 +13,7 @@ public class EmployeeEntity {
         this.id = id;
         this.fio = fio;
         this.gender = gender;
-        this.faculty = faculty;
+        this.department = faculty;
         this.degree = degree;
         this.position = position;
         this.birthday = birthday;
@@ -34,8 +34,8 @@ public class EmployeeEntity {
         return gender;
     }
 
-    public String getFaculty() {
-        return faculty;
+    public String getDepartment() {
+        return department;
     }
 
     public String getDegree() {
