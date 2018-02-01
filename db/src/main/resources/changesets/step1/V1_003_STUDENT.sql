@@ -4,7 +4,7 @@ CREATE TABLE liga.student (
   id                 BIGSERIAL PRIMARY KEY,
   fio                VARCHAR(400),
   gender             VARCHAR(100),
-  faculty            VARCHAR(100),
+  department         VARCHAR(100),
   student_group_id   BIGSERIAL,
   birthday           TIMESTAMP NOT NULL
 );
