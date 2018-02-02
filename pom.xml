@@ -16,7 +16,9 @@
 
     <modules>
         <module>db</module>
-        <module>liga-orm</module>
+        <module>spring-jdbc</module>
+        <module>mybatis</module>
+        <module>hibernate</module>
     </modules>
 
     <dependencies>
