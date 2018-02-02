@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- Mapper.java namespace -->
-<mapper namespace="ru.liga.dao.mybatis.MDepartmentDao">
+<mapper namespace="ru.liga.dao.MDepartmentDao">
 
-    <resultMap type="ru.liga.entity.DepartmentEntity" id="DepartmentMap">
+    <resultMap type="ru.liga.hibernate.entity.DepartmentEntity" id="DepartmentMap">
         <id property="id" column="id"/>
         <result property="title" column="title"/>
         <result property="address" column="address"/>
