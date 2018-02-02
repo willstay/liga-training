@@ -1,4 +1,4 @@
-package ru.liga.dao;
+package ru.liga.dao.springjdbc;
 
 
 import org.junit.Before;
