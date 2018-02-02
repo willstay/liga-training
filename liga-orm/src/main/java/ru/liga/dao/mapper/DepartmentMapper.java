@@ -15,7 +15,7 @@ public class DepartmentMapper implements RowMapper {
                 rs.getLong("id"),
                 rs.getString("title"),
                 rs.getString("address"),
-                rs.getInt("foundationYear"),
+                rs.getInt("foundation_year"),
                 null,
                 null
         );
