@@ -1,4 +1,4 @@
-package ru.liga.entity;
+package ru.liga.mybatis.entity;
 
 import java.time.LocalDate;
 

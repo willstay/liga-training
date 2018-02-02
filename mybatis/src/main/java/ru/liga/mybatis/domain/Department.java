@@ -1,4 +1,4 @@
-package ru.liga.domain;
+package ru.liga.mybatis.domain;
 
 public class Department {
     private final Long id;

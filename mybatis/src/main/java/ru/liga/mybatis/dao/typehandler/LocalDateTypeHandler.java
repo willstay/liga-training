@@ -1,4 +1,4 @@
-package ru.liga.dao.mybatis.typehandler;
+package ru.liga.mybatis.dao.typehandler;
 
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
