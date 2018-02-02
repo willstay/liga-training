@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
-import ru.liga.dao.DepartmentDao;
+import ru.liga.dao.springjdbc.mapper.DepartmentDao;
 
 
 @Configuration

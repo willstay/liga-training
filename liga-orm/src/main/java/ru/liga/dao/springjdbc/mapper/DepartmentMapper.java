@@ -1,4 +1,4 @@
-package ru.liga.dao.mapper;
+package ru.liga.dao.springjdbc.mapper;
 
 import org.springframework.jdbc.core.RowMapper;
 import ru.liga.entity.DepartmentEntity;

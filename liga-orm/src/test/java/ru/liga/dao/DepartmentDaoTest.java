@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.liga.config.TestDaoSpringConfig;
+import ru.liga.dao.springjdbc.mapper.DepartmentDao;
 
 import static org.junit.Assert.assertEquals;
 
