@@ -6,10 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import ru.liga.hibernate.entity.DepartmentEntity;
+import ru.liga.hibernate.entity.EmployeeEntity;
 
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -25,10 +29,26 @@ public class DepartmentDaoTest {
         assertEquals(4, entity.getEmployees().size());
         assertEquals(Integer.valueOf(1932), entity.getFoundationYear());
     }
+
     @Test
     public void findByIdFoundationYear() {
-        List<DepartmentEntity> entities= departmentDao.selectByFoundationYear(1934);
+        List<DepartmentEntity> entities = departmentDao.selectByFoundationYear(1934);
         assertEquals(1, entities.size());
+    }
+
+    @Test
+    public void saveTest() {
+        DepartmentEntity entity = departmentDao.select(1L);
+        entity.setTitle("Психологический");
+        entity.setId(null);
+        entity.setEmployees(Arrays.asList(new EmployeeEntity(null, "Chernoded Anton Aleksadrovich", "FEMALE", entity, null, "postgraduate", LocalDate.now())));
+        departmentDao.save(entity);
+        DepartmentEntity savedEntity = departmentDao.select(entity.getId());
+        assertTrue(
+                savedEntity.getEmployees()
+                        .stream()
+                        .anyMatch(e -> e.getFio().equals("Chernoded Anton Aleksadrovich"))
+        );
     }
 
 }

@@ -32,10 +32,10 @@ VALUES(9, 'Соколов Владимир Андреевич', 'male', 2, 'Ph.D
 
 
 INSERT INTO liga.employee ( id,  fio,  gender,  department_id,  degree,  position,  birthday)
-VALUES(10, 'Гутнова, Евгения Владимировна', 'female', 3, 'PhD','Lecturer', to_timestamp('1969-10-23', 'yyyy-mm-dd'));
+VALUES(10, 'Гутнова Евгения Владимировна', 'female', 3, 'PhD','Lecturer', to_timestamp('1969-10-23', 'yyyy-mm-dd'));
 
 INSERT INTO liga.employee ( id,  fio,  gender,  department_id,  degree,  position,  birthday)
-VALUES(11, 'Дыбо, Анна Владимировна', 'female', 3, 'PhD','Lecturer', to_timestamp('1978-07-10', 'yyyy-mm-dd'));
+VALUES(11, 'Дыбо Анна Владимировна', 'female', 3, 'PhD','Lecturer', to_timestamp('1978-07-10', 'yyyy-mm-dd'));
 
 
 

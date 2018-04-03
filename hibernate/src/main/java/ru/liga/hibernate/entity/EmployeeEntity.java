@@ -24,8 +24,8 @@ public class EmployeeEntity implements Serializable {
     private String degree;
     @Column(name = "position", unique = false, nullable = false)
     private String position;
-//    @Column(name = "birthday", unique = false, nullable = false)
-//    private LocalDate birthday;
+    @Column(name = "birthday", unique = false, nullable = false)
+    private LocalDate birthday;
 
     public EmployeeEntity(Long id, String fio, String gender, DepartmentEntity department, String degree, String position, LocalDate birthday) {
         this.id = id;
@@ -34,7 +34,7 @@ public class EmployeeEntity implements Serializable {
         this.department = department;
         this.degree = degree;
         this.position = position;
-//        this.birthday = birthday;
+        this.birthday = birthday;
     }
 
     public EmployeeEntity() {
@@ -90,10 +90,10 @@ public class EmployeeEntity implements Serializable {
     }
 
 
-//    public LocalDate getBirthday() {
-//        return birthday;
-//    }
-//    public void setBirthday(LocalDate birthday) {
-//        this.birthday = birthday;
-//    }
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
 }
