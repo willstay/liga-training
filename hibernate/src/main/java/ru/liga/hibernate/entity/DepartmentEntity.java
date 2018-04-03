@@ -2,7 +2,7 @@ package ru.liga.hibernate.entity;
 
 import javax.persistence.*;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,8 @@ import java.util.List;
         @UniqueConstraint(columnNames = "TITLE")})
 public class DepartmentEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = SEQUENCE, generator="department_id_seq")
+    @SequenceGenerator(name="department_id_seq", sequenceName = "department_id_seq", allocationSize=50)
     @Column(name = "ID", unique = true, nullable = false)
     private Long id;
     @Column(name = "TITLE", unique = true, nullable = false)
