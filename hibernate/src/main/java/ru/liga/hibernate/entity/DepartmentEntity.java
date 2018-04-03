@@ -27,16 +27,16 @@ public class DepartmentEntity implements Serializable {
     private String address;
     @Column(name = "FOUNDATION_YEAR", unique = false, nullable = false)
     private Integer foundationYear;
-    private List<EmployeeEntity> employees;
-    private List<StudentEntity> students;
+//    private List<EmployeeEntity> employees;
+//    private List<StudentEntity> students;
 
     public DepartmentEntity(Long id, String title, String address, Integer foundationYear, List<EmployeeEntity> employees, List<StudentEntity> students) {
         this.id = id;
         this.title = title;
         this.address = address;
         this.foundationYear = foundationYear;
-        this.employees = employees;
-        this.students = students;
+//        this.employees = employees;
+//        this.students = students;
     }
 
     public DepartmentEntity() {
@@ -74,19 +74,19 @@ public class DepartmentEntity implements Serializable {
         this.foundationYear = foundationYear;
     }
 
-    public List<EmployeeEntity> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<EmployeeEntity> employees) {
-        this.employees = employees;
-    }
-
-    public List<StudentEntity> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<StudentEntity> students) {
-        this.students = students;
-    }
+//    public List<EmployeeEntity> getEmployees() {
+//        return employees;
+//    }
+//
+//    public void setEmployees(List<EmployeeEntity> employees) {
+//        this.employees = employees;
+//    }
+//
+//    public List<StudentEntity> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(List<StudentEntity> students) {
+//        this.students = students;
+//    }
 }

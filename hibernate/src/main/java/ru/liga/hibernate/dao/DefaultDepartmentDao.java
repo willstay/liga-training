@@ -18,9 +18,6 @@ public class DefaultDepartmentDao implements DepartmentDao {
     @PersistenceContext
     private EntityManager em;
 
-    @Autowired
-    private SessionFactory sessionFactory;
-
     @Override
     public void save(DepartmentEntity entity) {
         em.persist(entity);
@@ -45,10 +42,10 @@ public class DefaultDepartmentDao implements DepartmentDao {
 
     @Override
     public DepartmentEntity selectByTitle(String title) {
-        Query query = sessionFactory.
-                getCurrentSession().
-                createQuery("FROM DepartmentEntity WHERE title = :title");
-        query.setParameter("title", title);
-        return (DepartmentEntity) query.list().get(0);
+        return (DepartmentEntity) em.
+                createQuery("FROM DepartmentEntity WHERE title = :title")
+                .setParameter("title", title)
+                .getResultList()
+                .get(0);
     }
 }
