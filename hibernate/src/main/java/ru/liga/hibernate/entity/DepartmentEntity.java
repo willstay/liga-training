@@ -17,10 +17,15 @@ import java.util.List;
         @UniqueConstraint(columnNames = "ID"),
         @UniqueConstraint(columnNames = "TITLE")})
 public class DepartmentEntity implements Serializable {
-
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "ID", unique = true, nullable = false)
     private Long id;
+    @Column(name = "TITLE", unique = true, nullable = false)
     private String title;
+    @Column(name = "ADDRESS", unique = false, nullable = false)
     private String address;
+    @Column(name = "FOUNDATION_YEAR", unique = false, nullable = false)
     private Integer foundationYear;
     private List<EmployeeEntity> employees;
     private List<StudentEntity> students;
@@ -37,9 +42,6 @@ public class DepartmentEntity implements Serializable {
     public DepartmentEntity() {
     }
 
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "ID", unique = true, nullable = false)
     public Long getId() {
         return id;
     }
@@ -48,7 +50,6 @@ public class DepartmentEntity implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "TITLE", unique = true, nullable = false)
     public String getTitle() {
         return title;
     }
@@ -57,7 +58,6 @@ public class DepartmentEntity implements Serializable {
         this.title = title;
     }
 
-    @Column(name = "ADDRESS", unique = false, nullable = false)
     public String getAddress() {
         return address;
     }
@@ -66,7 +66,6 @@ public class DepartmentEntity implements Serializable {
         this.address = address;
     }
 
-    @Column(name = "FOUNDATION_YEAR", unique = false, nullable = false)
     public Integer getFoundationYear() {
         return foundationYear;
     }

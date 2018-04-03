@@ -7,48 +7,47 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.liga.hibernate.entity.DepartmentEntity;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
-public class DefaultHDepartmentDao implements HDepartmentDao {
+@Transactional
+public class DefaultDepartmentDao implements DepartmentDao {
+
+    @PersistenceContext
+    private EntityManager em;
 
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public void save(DepartmentEntity entity) {
-        sessionFactory.getCurrentSession().save(entity);
+        em.persist(entity);
     }
 
     public void delete(Long entityId) {
-
+        em.remove(select(entityId));
     }
 
     @Override
-    @Transactional
     public DepartmentEntity select(Long id) {
-        return (DepartmentEntity) sessionFactory.
-                getCurrentSession().
-                get(DepartmentEntity.class, id);
+        return em.find(DepartmentEntity.class, id);
     }
 
     @Override
-    @Transactional
     public List<DepartmentEntity> selectByFoundationYear(Integer year) {
-        Query query = sessionFactory.
-                getCurrentSession().
-                createQuery("from DepartmentEntity where foundationYear = :foundationYear");
-        query.setParameter("foundationYear", year);
-        return (List) query.list();
+        return (List<DepartmentEntity>) em
+                .createQuery("FROM DepartmentEntity WHERE foundationYear = :foundationYear")
+                .setParameter("foundationYear", year)
+                .getResultList();
     }
 
     @Override
-    @Transactional
     public DepartmentEntity selectByTitle(String title) {
         Query query = sessionFactory.
                 getCurrentSession().
-                createQuery("from DepartmentEntity where title = :title");
+                createQuery("FROM DepartmentEntity WHERE title = :title");
         query.setParameter("title", title);
         return (DepartmentEntity) query.list().get(0);
     }

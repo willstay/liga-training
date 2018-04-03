@@ -4,7 +4,7 @@ import ru.liga.hibernate.entity.DepartmentEntity;
 
 import java.util.List;
 
-public interface HDepartmentDao {
+public interface DepartmentDao {
 
     void save(DepartmentEntity entity);
     void delete(Long entityId);
