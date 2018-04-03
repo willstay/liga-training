@@ -12,7 +12,7 @@ public interface DepartmentDao {
 
     void delete(Long entityId);
 
-    DepartmentEntity select(Long id) ;
+    DepartmentEntity select(Long id);
 
     List<DepartmentEntity> selectByFoundationYear(Integer year);
 
