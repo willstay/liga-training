@@ -1,14 +1,9 @@
 package ru.liga.hibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import java.io.Serializable;
 import java.util.List;
 
@@ -27,7 +22,9 @@ public class DepartmentEntity implements Serializable {
     private String address;
     @Column(name = "FOUNDATION_YEAR", unique = false, nullable = false)
     private Integer foundationYear;
-//    private List<EmployeeEntity> employees;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "department")
+    private List<EmployeeEntity> employees;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "stock")
 //    private List<StudentEntity> students;
 
     public DepartmentEntity(Long id, String title, String address, Integer foundationYear, List<EmployeeEntity> employees, List<StudentEntity> students) {
@@ -35,7 +32,7 @@ public class DepartmentEntity implements Serializable {
         this.title = title;
         this.address = address;
         this.foundationYear = foundationYear;
-//        this.employees = employees;
+        this.employees = employees;
 //        this.students = students;
     }
 
@@ -74,13 +71,13 @@ public class DepartmentEntity implements Serializable {
         this.foundationYear = foundationYear;
     }
 
-//    public List<EmployeeEntity> getEmployees() {
-//        return employees;
-//    }
-//
-//    public void setEmployees(List<EmployeeEntity> employees) {
-//        this.employees = employees;
-//    }
+    public List<EmployeeEntity> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<EmployeeEntity> employees) {
+        this.employees = employees;
+    }
 //
 //    public List<StudentEntity> getStudents() {
 //        return students;

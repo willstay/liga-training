@@ -5,7 +5,7 @@ CREATE TABLE liga.employee (
   id             BIGSERIAL PRIMARY KEY,
   fio            VARCHAR(400),
   gender         VARCHAR(100),
-  department     VARCHAR(200),
+  department_id  bigint,
   degree         VARCHAR(200),
   position       VARCHAR(200),
   birthday       TIMESTAMP NOT NULL

@@ -7,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import ru.liga.hibernate.entity.DepartmentEntity;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -20,7 +22,13 @@ public class DepartmentDaoTest {
         DepartmentEntity entity = departmentDao.select(1L);
         assertEquals("Механико-математический", entity.getTitle());
         assertEquals("119991, ГСП-1, Москва, Ленинские горы, МГУ, д.1, Главное здание, механико-математический факультет", entity.getAddress());
+        assertEquals(4, entity.getEmployees().size());
         assertEquals(Integer.valueOf(1932), entity.getFoundationYear());
+    }
+    @Test
+    public void findByIdFoundationYear() {
+        List<DepartmentEntity> entities= departmentDao.selectByFoundationYear(1934);
+        assertEquals(1, entities.size());
     }
 
 }
