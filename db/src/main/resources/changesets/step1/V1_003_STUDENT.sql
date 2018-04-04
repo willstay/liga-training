@@ -5,6 +5,6 @@ CREATE TABLE liga.student (
   fio                VARCHAR(400),
   gender             VARCHAR(100),
   department         VARCHAR(100),
-  student_group_id   BIGSERIAL,
+  course             SMALLINT,
   birthday           TIMESTAMP NOT NULL
 );

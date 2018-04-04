@@ -1,116 +1,121 @@
 --liquibase formatted sql logicalFilePath:V1_009_STUDENT_DATA.sql
 --changeset sanasov:1.9 runOnChange:true context:prod
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Бардашов Данила Романович','female', 'Механико-математический', '11', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Валуева Алена Андреевна','female', 'Механико-математический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Изюмникова Евгения Александровна','female', 'Механико-математический', '11', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Казинский Максим Тарасович','female', 'Механико-математический', '11', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Бардашов Данила Романович','MALE', 'Механико-математический', 1, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Валуева Алена Андреевна','FEMALE', 'Механико-математический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Изюмникова Евгения Александровна','FEMALE', 'Механико-математический', 1, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Казинский Максим Тарасович','MALE', 'Механико-математический', 1, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Лычкова Дарья Геннадьевна','female', 'Механико-математический', '21', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Гайнуллина Галия Тагировна','female', 'Механико-математический', '21', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Лещенко Валентина Андреевна','female', 'Механико-математический', '21', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Руденко Анна Юрьевна','female', 'Механико-математический', '21', to_timestamp('1994-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Чернов Игнат Владимирович','MALE', 'Механико-математический', 2, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Гайнуллина Галия Тагировна','FEMALE', 'Механико-математический', 2, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Лещенко Валентина Андреевна','FEMALE', 'Механико-математический', 2, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Руденко Анна Юрьевна','FEMALE', 'Механико-математический', 2, to_timestamp('1994-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Шопина Ольга Владимировна','female', 'Механико-математический', '31', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Белик Анна Дмитриевна','female', 'Механико-математический', '31', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Дубровская Татьяна Валерьевна','female', 'Механико-математический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Иовчева Анастасия Дмитриевна','female', 'Механико-математический', '31', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Шопина Ольга Владимировна','FEMALE', 'Механико-математический', 3, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Белик Анна Дмитриевна','FEMALE', 'Механико-математический', 3, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Дубровская Татьяна Валерьевна','FEMALE', 'Механико-математический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Иовчева Анастасия Дмитриевна','FEMALE', 'Механико-математический', 3, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Кравченко Елена Игоревна','female', 'Механико-математический', '41', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Лисова Александра Дмитриевна','female', 'Механико-математический', '41', to_timestamp('1999-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Маккавеев Евгений Петрович','female', 'Механико-математический', '41', to_timestamp('1999-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Михайлова Дарья Владимировна','female', 'Механико-математический', '41', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Кравченко Елена Игоревна','FEMALE', 'Механико-математический', 4, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Лисова Александра Дмитриевна','FEMALE', 'Механико-математический', 4, to_timestamp('1999-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Маккавеев Евгений Петрович','MALE', 'Механико-математический', 4, to_timestamp('1999-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Михайлова Дарья Владимировна','FEMALE', 'Механико-математический', 4, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Пискарева Вероника Максимовна','female', 'Физический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Рудик Наталья Игоревна','female', 'Физический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Узор Михаил Алексеевич','female', 'Физический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Фомичева Дарья Владимировна','female', 'Физический', '11', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Щмелев Леонид Алексеевич','female', 'Физический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Безбердая Лилия Александровна','female', 'Физический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Гильманов Владислав Раулевич','female', 'Физический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Капустина Ирина Сергеевна','female', 'Физический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Каршигиева Аида Садуокасовна','female', 'Физический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Козачук Мария Никитична','female', 'Физический', '31', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Мальцова Полина Игоревна','female', 'Физический', '31', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Папкина Алена Эдуардовна','female', 'Физический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Пискарева Вероника Максимовна','FEMALE', 'Физический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Рудик Наталья Игоревна','FEMALE', 'Физический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Узор Михаил Алексеевич','MALE', 'Физический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Фомичева Дарья Владимировна','FEMALE', 'Физический', 1, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Турлова Екатерина Олеговна','female', 'Физический', '41', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Гаджикеримова Анжела Юрьевна','female', 'Физический', '41', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Енчилик Полина Романовна','female', 'Физический', '41', to_timestamp('1999-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Козган Мирас Ерланович','female', 'Физический', '41', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Щмелев Леонид Алексеевич','MALE', 'Физический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Безбердая Лилия Александровна','FEMALE', 'Физический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Гильманов Владислав Раулевич','MALE', 'Физический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Капустина Ирина Сергеевна','FEMALE', 'Физический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Котвица (Билык) Мария Александровна','female', 'Исторический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Кузьминская (Кислякова) Наталья Юрьевна','female', 'Исторический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Лобанов Алексей Александрович','female', 'Исторический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Рыжов Александр Владимирович','female', 'Исторический', '11', to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Каршигиева Аида Садуокасовна','FEMALE', 'Физический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Козачук Мария Никитична','FEMALE', 'Физический', 3, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Мальцова Полина Игоревна','FEMALE', 'Физический', 3, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Папкина Алена Эдуардовна','FEMALE', 'Физический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Сорокина Ксения Игоревна','female', 'Исторический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Шестова Елизавета Владимировна','female', 'Исторический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Васильчук Джессика Юрьевна','female', 'Исторический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Гаврилова Валентина Игоревна','female', 'Исторический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Костин Александр Сергеевич','female', 'Исторический', '21', to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Турлова Екатерина Олеговна','FEMALE', 'Физический', 4, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Гаджикеримова Анжела Юрьевна','FEMALE', 'Физический', 4, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Енчилик Полина Романовна','FEMALE', 'Физический', 4, to_timestamp('1999-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Козган Мирас Ерланович','MALE', 'Физический', 4, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Глиген Полина Леонидовна','female', 'Исторический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Доценко Александр Михайлович','male', 'Исторический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Еманов Константин Владимирович','male', 'Исторический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Ермолаева Евгения Владимировна','female', 'Исторический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Жданов Павел Павлович','male', 'Исторический', '31', to_timestamp('1997-06-05', 'yyyy-mm-dd'));
 
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Волков	Дмитрий	Сергеевич','female', 'Исторический', '41', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Ермакова	Арина	Александровна','male', 'Исторический', '41', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Лисянский	Игорь	Владимирович','male', 'Исторический', '41', to_timestamp('1998-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Морозова	Анастасия	Олеговна','female', 'Исторический', '41', to_timestamp('1999-06-05', 'yyyy-mm-dd'));
-INSERT INTO liga.student (fio, gender, department, student_group_id, birthday)
-VALUES('Никитухина	Валентина	Николаевна','male', 'Исторический', '41', to_timestamp('1999-06-05', 'yyyy-mm-dd'));
+
+
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Котвица Мария Александровна','FEMALE', 'Исторический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Кузьминская (Кислякова) Наталья Юрьевна','FEMALE', 'Исторический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Лобанов Алексей Александрович','MALE', 'Исторический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Рыжов Александр Владимирович','MALE', 'Исторический', 1, to_timestamp('1995-06-05', 'yyyy-mm-dd'));
+
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Сорокина Ксения Игоревна','FEMALE', 'Исторический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Шестова Елизавета Владимировна','FEMALE', 'Исторический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Васильчук Джессика Юрьевна','FEMALE', 'Исторический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Гаврилова Валентина Игоревна','FEMALE', 'Исторический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Костин Александр Сергеевич','MALE', 'Исторический', 2, to_timestamp('1996-06-05', 'yyyy-mm-dd'));
+
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Глиген Полина Леонидовна','FEMALE', 'Исторический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Доценко Александр Михайлович','MALE', 'Исторический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Еманов Константин Владимирович','MALE', 'Исторический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Ермолаева Евгения Владимировна','FEMALE', 'Исторический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Жданов Павел Павлович','MALE', 'Исторический', 3, to_timestamp('1997-06-05', 'yyyy-mm-dd'));
+
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Волков	Дмитрий	Сергеевич','MALE', 'Исторический', 4, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Ермакова	Арина	Александровна','FEMALE', 'Исторический', 4, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Лисянский	Игорь	Владимирович','MALE', 'Исторический', 4, to_timestamp('1998-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Морозова	Анастасия	Олеговна','FEMALE', 'Исторический', 4, to_timestamp('1999-06-05', 'yyyy-mm-dd'));
+INSERT INTO liga.student (fio, gender, department, course, birthday)
+VALUES('Никитухина	Валентина	Николаевна','FEMALE', 'Исторический', 4, to_timestamp('1999-06-05', 'yyyy-mm-dd'));
