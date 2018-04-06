@@ -38,10 +38,11 @@ public class DepartmentDaoTest {
 
     @Test
     public void saveTest() {
-        DepartmentEntity entity = departmentDao.select(1L);
+        DepartmentEntity entity = new DepartmentEntity();
         entity.setTitle("Психологический");
-        entity.setId(null);
-        entity.setEmployees(Arrays.asList(new EmployeeEntity(null, "Chernoded Anton Aleksadrovich", "FEMALE", entity, null, "postgraduate", LocalDate.now())));
+        entity.setFoundationYear(1948);
+        entity.setAddress("Москва");
+        entity.setEmployees(Arrays.asList(new EmployeeEntity(null, "Chernoded Anton Aleksadrovich", "FEMALE", entity, "MASTER", "postgraduate", LocalDate.now())));
         departmentDao.save(entity);
         DepartmentEntity savedEntity = departmentDao.select(entity.getId());
         assertTrue(
