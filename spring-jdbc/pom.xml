@@ -44,9 +44,10 @@
             <id>local_deploy</id>
             <properties>
                 <database.url>jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=liga</database.url>
-                <database.user>postgres</database.user>
-                <database.password>q</database.password>
-                <database.schema>liga</database.schema>
+                <!--<database.url>jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=liga</database.url>-->
+                <!--<database.user>postgres</database.user>-->
+                <!--<database.password>q</database.password>-->
+                <!--<database.schema>liga</database.schema>-->
             </properties>
         </profile>
     </profiles>
@@ -64,10 +65,15 @@
     </dependencyManagement>
 
     <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>org.postgresql</groupId>-->
+            <!--<artifactId>postgresql</artifactId>-->
+            <!--<version>42.1.4</version>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.1.4</version>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.16.1</version>
         </dependency>
 
         <!--spring-->
