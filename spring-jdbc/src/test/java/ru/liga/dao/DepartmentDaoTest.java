@@ -24,7 +24,7 @@ public class DepartmentDaoTest {
     }
 
     @Test
-    public void select() {
+    public void findByFoundationYearTest() {
         assertEquals(1, departmentDao.findByFoundationYear(1933).size());
     }
 
