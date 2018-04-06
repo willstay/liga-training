@@ -19,6 +19,8 @@ public class TestDaoSpringConfig {
 
     @Value("${database.url}")
     private String url;
+    @Value("${database.driver}")
+    private String driver;
     @Value("${database.user}")
     private String user;
     @Value("${database.password}")
@@ -26,26 +28,16 @@ public class TestDaoSpringConfig {
     @Value("${database.schema}")
     private String schema;
 
-//    /**
-//     * @return источник данных postgres
-//     */
-//    @Bean("dataSource")
-//    public DataSource dataSource() {
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName("org.postgresql.Driver");
-//        dataSource.setUrl(url);
-//        dataSource.setUsername(user);
-//        dataSource.setPassword(password);
-//        return dataSource;
-//    }
     /**
-     * @return источник данных sqlite
+     * @return источник данных postgres
      */
     @Bean("dataSource")
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.sqlite.JDBC");
+        dataSource.setDriverClassName(driver);
         dataSource.setUrl(url);
+        dataSource.setUsername(user);
+        dataSource.setPassword(password);
         return dataSource;
     }
 
