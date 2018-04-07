@@ -5,10 +5,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import static javax.persistence.GenerationType.IDENTITY;
-import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-@Table(name = "employee", catalog = "liga", uniqueConstraints = {@UniqueConstraint(columnNames = "ID")})
+@Table(name = "employee", uniqueConstraints = {@UniqueConstraint(columnNames = "ID")})
 public class EmployeeEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)

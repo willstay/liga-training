@@ -3,13 +3,12 @@ package ru.liga.hibernate.entity;
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
-import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "department", catalog = "liga", uniqueConstraints = {
+@Table(name = "department",  uniqueConstraints = {
         @UniqueConstraint(columnNames = "ID"),
         @UniqueConstraint(columnNames = "TITLE")})
 public class DepartmentEntity implements Serializable {

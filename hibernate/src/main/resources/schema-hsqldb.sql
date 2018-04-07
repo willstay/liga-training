@@ -1,26 +1,27 @@
-DROP SCHEMA IF EXISTS liga;
-CREATE SCHEMA IF NOT EXISTS liga;
+ DROP TABLE IF EXISTS student;
+ DROP TABLE IF EXISTS department;
+ DROP TABLE IF EXISTS employee;
 
-CREATE TABLE liga.student (
-  id                 INTEGER PRIMARY KEY IDENTITY,
+CREATE TABLE student (
+  id                 BIGINT PRIMARY KEY IDENTITY,
   fio                VARCHAR(400),
   gender             VARCHAR(100),
   department_id      VARCHAR(100),
-  course             SMALLINT,
-  birthday           TIMESTAMP NOT NULL
+  course             INTEGER,
+  birthday           DATE NOT NULL
 );
-CREATE TABLE liga.department (
-  id                              INTEGER                  PRIMARY KEY IDENTITY,
+CREATE TABLE department (
+  id                              BIGINT                   PRIMARY KEY IDENTITY,
   title                           VARCHAR(200)             NOT NULL,
   address                         VARCHAR(1000)            NOT NULL,
-  foundation_year                 SMALLINT
+  foundation_year                 INTEGER
 );
-CREATE TABLE liga.employee (
-  id             INTEGER PRIMARY KEY IDENTITY,
+CREATE TABLE employee (
+  id             BIGINT PRIMARY KEY IDENTITY,
   fio            VARCHAR(400),
   gender         VARCHAR(100),
-  department_id  INTEGER,
+  department_id  BIGINT,
   degree         VARCHAR(200),
   position       VARCHAR(200),
-  birthday       TIMESTAMP NOT NULL
+  birthday       DATE NOT NULL
 );
