@@ -24,8 +24,7 @@ public class DepartmentEntity implements Serializable {
     private Integer foundationYear;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<EmployeeEntity> employees;
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "stock")
-//    private List<StudentEntity> students;
+
 
     public DepartmentEntity(Long id, String title, String address, Integer foundationYear, List<EmployeeEntity> employees, List<StudentEntity> students) {
         this.id = id;
