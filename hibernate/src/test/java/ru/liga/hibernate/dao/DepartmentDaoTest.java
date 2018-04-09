@@ -23,10 +23,10 @@ public class DepartmentDaoTest {
 
     @Test
     public void findByIdTest() {
-        DepartmentEntity entity = departmentDao.select(1L);
+        DepartmentEntity entity = departmentDao.select(0L);
         assertEquals("Механико-математический", entity.getTitle());
         assertEquals("119991, ГСП-1, Москва, Ленинские горы, МГУ, д.1, Главное здание, механико-математический факультет", entity.getAddress());
-        assertEquals(4, entity.getEmployees().size());
+        assertEquals(5, entity.getEmployees().size());
         assertEquals(Integer.valueOf(1932), entity.getFoundationYear());
     }
 
