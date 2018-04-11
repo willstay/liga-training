@@ -1,12 +1,9 @@
 package ru.liga.mybatis.entity;
 
-
 import java.io.Serializable;
 import java.util.List;
 
-
 public class DepartmentEntity implements Serializable {
-
     private Long id;
     private String title;
     private String address;
