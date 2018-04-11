@@ -25,11 +25,9 @@ public class DepartmentDao {
     public DepartmentEntity insert(DepartmentEntity entity) {
         String sqlInsert = "INSERT INTO department (title, address, foundation_year)"
                 + " VALUES (?, ?, ?)";
-        jdbcTemplate.update(sqlInsert, new Object[]{
-                entity.getTitle(),
+        jdbcTemplate.update(sqlInsert, entity.getTitle(),
                 entity.getAddress(),
-                entity.getFoundationYear()
-        });
+                entity.getFoundationYear());
         return entity;
     }
 
@@ -39,12 +37,10 @@ public class DepartmentDao {
                 " address = ?," +
                 " foundation_year = ?" +
                 " where id = ?";
-        jdbcTemplate.update(sqlUpdate, new Object[]{
-                entity.getTitle(),
+        jdbcTemplate.update(sqlUpdate, entity.getTitle(),
                 entity.getAddress(),
                 entity.getFoundationYear(),
-                entity.getId()
-        });
+                entity.getId());
         return entity;
     }
 
