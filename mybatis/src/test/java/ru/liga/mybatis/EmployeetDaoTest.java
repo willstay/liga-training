@@ -27,7 +27,11 @@ public class EmployeetDaoTest {
 
     @Test
     public void selectById() {
-        assertEquals("", employeeDao.select(1L).getFio());
+        assertEquals("Владимир Николаевич Чубариков", employeeDao.select(1L).getFio());
+    }
+    @Test
+    public void selectByDepartmentId() {
+        assertEquals(4, employeeDao.selectByDepartmentId(1L).size());
     }
 
 }

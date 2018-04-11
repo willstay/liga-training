@@ -4,11 +4,18 @@
 <!-- Mapper.java namespace -->
 <mapper namespace="ru.liga.mybatis.dao.DepartmentDao">
 
-    <resultMap type="ru.liga.mybatis.entity.DepartmentEntity" id="DepartmentMap">
+    <resultMap type="DepartmentEntity" id="DepartmentMap">
         <id property="id" column="id"/>
         <result property="title" column="title"/>
         <result property="address" column="address"/>
         <result property="foundationYear" column="foundation_year"/>
+        <collection
+                property="employees"
+                javaType="List"
+                column="id"
+                ofType="EmployeeEntity"
+                select="ru.liga.mybatis.dao.EmployeeDao.selectByDepartmentId"
+        />
     </resultMap>
 
     <delete id="delete" parameterType="long">
