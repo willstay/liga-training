@@ -22,5 +22,6 @@
     </typeHandlers>
     <mappers>
         <mapper resource="dao/DepartmentDao.xml"/>
+        <mapper resource="dao/EmployeeDao.xml"/>
     </mappers>
 </configuration>

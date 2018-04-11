@@ -14,10 +14,11 @@
         <profile>
             <id>postgres</id>
             <properties>
-                <database.url>jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=liga</database.url>
+                <database.url>jdbc:postgresql://127.0.0.1:5432/postgres</database.url>
                 <database.user>postgres</database.user>
                 <database.password>q</database.password>
                 <database.schema>liga</database.schema>
+                <database.driver>org.postgresql.Driver</database.driver>
             </properties>
         </profile>
         <profile>
@@ -70,16 +71,16 @@
             <artifactId>liquibase-core</artifactId>
             <version>3.5.3</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.postgresql</groupId>-->
-        <!--<artifactId>postgresql</artifactId>-->
-        <!--<version>42.2.1</version>-->
-        <!--</dependency>-->
         <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <version>3.16.1</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.1</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.xerial</groupId>-->
+            <!--<artifactId>sqlite-jdbc</artifactId>-->
+            <!--<version>3.16.1</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>

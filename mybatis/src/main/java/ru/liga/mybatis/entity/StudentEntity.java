@@ -7,18 +7,18 @@ public class StudentEntity {
     private String fio;
     private String gender;
     private Long departmentId;
-    private String studentGroupId;
+    private Long course;
     private LocalDate birthday;
 
     public StudentEntity() {
     }
 
-    public StudentEntity(Long id, String fio, String gender, Long departmentId, String studentGroupId, LocalDate birthday) {
+    public StudentEntity(Long id, String fio, String gender, Long departmentId, Long course, LocalDate birthday) {
         this.id = id;
         this.fio = fio;
         this.gender = gender;
         this.departmentId = departmentId;
-        this.studentGroupId = studentGroupId;
+        this.course = course;
         this.birthday = birthday;
     }
 
@@ -54,12 +54,12 @@ public class StudentEntity {
         this.departmentId = departmentId;
     }
 
-    public String getStudentGroupId() {
-        return studentGroupId;
+    public Long getCourse() {
+        return course;
     }
 
-    public void setStudentGroupId(String studentGroupId) {
-        this.studentGroupId = studentGroupId;
+    public void setCourse(Long course) {
+        this.course = course;
     }
 
     public LocalDate getBirthday() {
