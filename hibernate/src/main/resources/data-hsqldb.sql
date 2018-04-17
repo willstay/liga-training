@@ -176,9 +176,16 @@ VALUES('Морозова	Анастасия	Олеговна','FEMALE', 'Ист�
 INSERT INTO student (fio, gender, department_id, course, birthday)
 VALUES('Никитухина	Валентина	Николаевна','FEMALE', 'Исторический', 4, to_date('1999-06-05', 'YYYY-MM-DD'));
 
-ALTER TABLE student ADD COLUMN department_id BIGINT;
+ALTER TABLE student ADD COLUMN department_temp BIGINT;
 
 UPDATE student as st
-SET department_id = (SELECT id FROM liga.departmentId WHERE st.department_name = title);
+SET department_temp = (SELECT id FROM department WHERE st.department_id = title);
 
-ALTER TABLE student DROP COLUMN department_name;
+ALTER TABLE student DROP COLUMN department_id;
+ALTER TABLE student ADD COLUMN department_id BIGINT;
+
+UPDATE student
+SET department_id = department_temp;
+
+ALTER TABLE student DROP COLUMN department_temp;
+

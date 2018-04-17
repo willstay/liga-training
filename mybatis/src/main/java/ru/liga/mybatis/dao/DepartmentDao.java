@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface DepartmentDao {
 
-    int insert(DepartmentEntity entity);
+    int insertById(DepartmentEntity entity);
 
-    int update(DepartmentEntity entity);
+    int updateById(DepartmentEntity entity);
 
-    void delete(Long entityId);
+    void deleteById(Long entityId);
 
-    DepartmentEntity select(Long id);
+    DepartmentEntity findById(Long id);
 
     List<DepartmentEntity> selectByFoundationYear(Integer year);
 

@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {TestDaoSpringConfig.class})
-public class EmployeetDaoTest {
+public class EmployeeDaoTest {
 
     @Autowired
     private EmployeeDao employeeDao;

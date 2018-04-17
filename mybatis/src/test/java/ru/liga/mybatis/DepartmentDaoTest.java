@@ -9,7 +9,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.liga.mybatis.config.TestDaoSpringConfig;
 import ru.liga.mybatis.dao.DepartmentDao;
 import ru.liga.mybatis.dao.EmployeeDao;
-import ru.liga.mybatis.entity.DepartmentEntity;
 import ru.liga.mybatis.entity.EmployeeEntity;
 
 import java.time.LocalDate;
@@ -34,7 +33,7 @@ public class DepartmentDaoTest {
 
     @Test
     public void selectByFoundationYear() {
-        assertEquals(7, departmentDao.select(1L).getEmployees().size());
+        assertEquals(7, departmentDao.findById(1L).getEmployees().size());
     }
 
     @Test

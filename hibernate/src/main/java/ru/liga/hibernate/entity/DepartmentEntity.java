@@ -1,5 +1,8 @@
 package ru.liga.hibernate.entity;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;

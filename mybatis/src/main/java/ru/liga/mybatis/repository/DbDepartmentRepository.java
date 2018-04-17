@@ -11,8 +11,6 @@ import ru.liga.mybatis.entity.StudentEntity;
 
 @Component
 public class DbDepartmentRepository implements DepartmentRepository {
-
-
     @Autowired
     private DepartmentDao departmentDao;
 
@@ -24,10 +22,10 @@ public class DbDepartmentRepository implements DepartmentRepository {
 
     @Override
     public DepartmentEntity save(DepartmentEntity entity) {
-        if (departmentDao.select(entity.getId()) == null) {
-            departmentDao.insert(entity);
+        if (departmentDao.findById(entity.getId()) == null) {
+            departmentDao.insertById(entity);
         } else {
-            departmentDao.update(entity);
+            departmentDao.updateById(entity);
         }
         for (StudentEntity student : entity.getStudents()) {
             if (studentDao.selectById(student.getId()) == null) {
@@ -50,7 +48,7 @@ public class DbDepartmentRepository implements DepartmentRepository {
 
     @Override
     public void deleteById(Long id) {
-        departmentDao.delete(id);
+        departmentDao.deleteById(id);
         studentDao.selectByDepartmentId(id).stream()
                 .mapToLong(StudentEntity::getId)
                 .forEach(studentDao::delete);
@@ -61,6 +59,6 @@ public class DbDepartmentRepository implements DepartmentRepository {
 
     @Override
     public DepartmentEntity findById(Long id) {
-        return departmentDao.select(id);
+        return departmentDao.findById(id);
     }
 }

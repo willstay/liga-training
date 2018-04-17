@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- Mapper.java namespace -->
-<mapper namespace="ru.liga.mybatis.dao.DepartmentDao">
+<mapper namespace="ru.liga.mybatis.dao.StudentDao">
 
-    <resultMap type="StudentEntity" id="StudentMap">
+    <resultMap type="ru.liga.mybatis.entity.StudentEntity" id="StudentMap">
         <id property="id" column="id"/>
         <result property="fio" column="fio"/>
         <result property="gender" column="gender"/>
@@ -15,19 +15,19 @@
     </resultMap>
 
     <delete id="delete" parameterType="long">
-        delete from student where id = #{id}
+        delete from liga.student where id = #{id}
     </delete>
 
     <select id="select" resultMap="StudentMap">
-        SELECT * FROM student
+        SELECT * FROM liga.student
         WHERE id = #{id}
     </select>
 
     <select id="selectById" resultMap="StudentMap">
-        SELECT * FROM student WHERE id = #{id}
+        SELECT * FROM liga.student WHERE id = #{id}
     </select>
     <select id="selectByDepartmentId" resultMap="StudentMap">
-        SELECT * FROM student WHERE department_id = #{id}
+        SELECT * FROM liga.student WHERE department_id = #{id}
     </select>
 
     <insert id="insert"
@@ -35,18 +35,18 @@
             statementType="PREPARED"
             keyProperty="id"
             useGeneratedKeys="true">
-        insert into student (fio, gender, department_id, course, birthday)
+        insert into liga.student (fio, gender, department_id, course, birthday)
         values (
         #{fio, jdbcType=VARCHAR},
         #{gender, jdbcType=VARCHAR},
-        #{departmentId, jdbcType=BIGINT}
-        #{course, jdbcType=SMALLINT}
+        #{departmentId, jdbcType=BIGINT},
+        #{course, jdbcType=SMALLINT},
         #{birthday, jdbcType=TIMESTAMP}
         )
     </insert>
 
     <update id="update" parameterType="StudentEntity">
-        update student
+        update liga.student
         SET
         title = #{title, jdbcType=VARCHAR},
         address = #{address, jdbcType=VARCHAR},

@@ -15,12 +15,12 @@
     </resultMap>
 
     <select id="select" resultMap="EmployeeMap">
-        SELECT * FROM employee
+        SELECT * FROM liga.employee
         WHERE id = #{id}
     </select>
 
     <select id="selectByDepartmentId" resultMap="EmployeeMap">
-        SELECT * FROM employee WHERE department_id = #{departmentId}
+        SELECT * FROM liga.employee WHERE department_id = #{departmentId}
     </select>
 
     <insert id="insert"
@@ -28,7 +28,7 @@
             statementType="PREPARED"
             keyProperty="id"
             useGeneratedKeys="true">
-        insert into employee (fio, gender, department_id, degree, position, birthday)
+        insert into liga.employee (fio, gender, department_id, degree, position, birthday)
         values (
         #{fio, jdbcType=VARCHAR},
         #{gender, jdbcType=VARCHAR},
@@ -39,11 +39,11 @@
         )
     </insert>
     <delete id="delete" parameterType="long">
-        delete from employee where id = #{id}
+        delete from liga.employee where id = #{id}
     </delete>
 
     <update id="update" parameterType="EmployeeEntity">
-        update employee
+        update liga.employee
         SET
         fio = #{fio, jdbcType=VARCHAR},
         gender = #{gender, jdbcType=VARCHAR},

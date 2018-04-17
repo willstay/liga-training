@@ -7,7 +7,7 @@ CREATE TABLE student (
   fio                VARCHAR(400),
   gender             VARCHAR(100),
   department_id      VARCHAR(100),
-  course             INTEGER,
+  course             BIGINT,
   birthday           DATE NOT NULL
 );
 CREATE TABLE department (

@@ -17,18 +17,18 @@ public class StudentEntity implements Serializable {
     private String fio;
     @Column(name = "gender", unique = false, nullable = false)
     private String gender;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "department_id", nullable = false)
     private DepartmentEntity department;
     @Column(name = "course", unique = false, nullable = false)
-    private Integer course;
+    private Long course;
     @Column(name = "birthday", unique = false, nullable = false)
     private LocalDate birthday;
 
     public StudentEntity() {
     }
 
-    public StudentEntity(Long id, String fio, String gender, DepartmentEntity department, Integer course, LocalDate birthday) {
+    public StudentEntity(Long id, String fio, String gender, DepartmentEntity department, Long course, LocalDate birthday) {
         this.id = id;
         this.fio = fio;
         this.gender = gender;
@@ -69,11 +69,11 @@ public class StudentEntity implements Serializable {
         this.department = department;
     }
 
-    public Integer getCourse() {
+    public Long getCourse() {
         return course;
     }
 
-    public void setCourse(Integer course) {
+    public void setCourse(Long course) {
         this.course = course;
     }
 

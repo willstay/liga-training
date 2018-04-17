@@ -25,12 +25,12 @@
         />
     </resultMap>
 
-    <delete id="delete" parameterType="long">
-        delete from departmentId where id = #{id}
+    <delete id="deleteById" parameterType="long">
+        delete from liga.departmentId where id = #{id}
     </delete>
 
-    <select id="select" resultMap="DepartmentMap">
-        SELECT * FROM departmentId
+    <select id="findById" resultMap="DepartmentMap">
+        SELECT * FROM liga.departmentId
         WHERE id = #{id}
     </select>
 
@@ -38,28 +38,28 @@
         SELECT * FROM departmentId WHERE foundation_year = #{foundationYear}
     </select>
     <select id="selectByTitle" resultMap="DepartmentMap">
-   SELECT * FROM departmentId WHERE title = #{title}
+   SELECT * FROM liga.departmentId WHERE title = #{title}
     </select>
 
-    <insert id="insert"
+    <insert id="insertById"
             parameterType="DepartmentEntity"
             statementType="PREPARED"
             keyProperty="id"
             useGeneratedKeys="true">
-        insert into departmentId (title, address, foundation_year)
+        insert into liga.departmentId (title, address, foundation_year)
         values (
         #{title, jdbcType=VARCHAR},
         #{address, jdbcType=VARCHAR},
-        #{foundation_year, jdbcType=SMALLINT}
+        #{foundationYear, jdbcType=SMALLINT}
         )
     </insert>
 
-    <update id="update" parameterType="DepartmentEntity">
-        update departmentId
+    <update id="updateById" parameterType="DepartmentEntity">
+        update liga.departmentId
         SET
            title = #{title, jdbcType=VARCHAR},
            address = #{address, jdbcType=VARCHAR},
-           foundation_year = #{foundation_year, jdbcType=SMALLINT}
+           foundation_year = #{foundationYear, jdbcType=SMALLINT}
         WHERE id = #{id}
     </update>
 
