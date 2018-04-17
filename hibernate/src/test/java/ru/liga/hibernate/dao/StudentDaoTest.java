@@ -22,12 +22,20 @@ public class StudentDaoTest {
 
     @Test
     public void selectBardashovTest() {
-        assertEquals(studentDao.selectById(0L).getFio(), "Бардашов Данила Романович");
+        assertEquals(studentDao.selectById(3L).getFio(), "Казинский Максим Тарасович");
     }
 
     @Test
-    public void deleteBardashovTest() {
-        studentDao.deleteById(1L);
+    public void changeToPetrTest(){
+        StudentEntity studentEntity = studentDao.selectById(0L);
+        String fio = "Бардашов Петр Романович";
+        studentEntity.setFio(fio);
+        studentDao.update(studentEntity);
+        assertEquals(studentDao.selectById(0L).getFio(), fio);
+    }
+    @Test
+    public void deleteTest() {
+        studentDao.deleteById(4L);
     }
 
     @Test
@@ -40,7 +48,7 @@ public class StudentDaoTest {
                 1L,
                 LocalDate.now()
         );
-        studentDao.save(studentEntity);
+        studentDao.insert(studentEntity);
         assertEquals(studentDao.selectById(studentEntity.getId()).getFio(), "Private Ryan");
     }
 }

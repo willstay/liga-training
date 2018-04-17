@@ -8,7 +8,9 @@ public interface StudentDao {
 
     void deleteById(Long entityId);
 
-    void save(StudentEntity studentEntity);
+    void insert(StudentEntity studentEntity);
+
+    void update(StudentEntity studentEntity);
 
     StudentEntity selectById(Long id);
 

@@ -26,8 +26,13 @@ public class DefaultStudentDao implements StudentDao{
     }
 
     @Override
-    public void save(StudentEntity studentEntity) {
+    public void insert(StudentEntity studentEntity) {
         em.persist(studentEntity);
+    }
+
+    @Override
+    public void update(StudentEntity studentEntity) {
+        em.merge(studentEntity);
     }
 
     @Override
