@@ -16,22 +16,29 @@
                 ofType="EmployeeEntity"
                 select="ru.liga.mybatis.dao.EmployeeDao.selectByDepartmentId"
         />
+        <collection
+                property="students"
+                javaType="List"
+                column="id"
+                ofType="StudentEntity"
+                select="ru.liga.mybatis.dao.StudentDao.selectByDepartmentId"
+        />
     </resultMap>
 
     <delete id="delete" parameterType="long">
-        delete from department where id = #{id}
+        delete from departmentId where id = #{id}
     </delete>
 
     <select id="select" resultMap="DepartmentMap">
-        SELECT * FROM department
+        SELECT * FROM departmentId
         WHERE id = #{id}
     </select>
 
     <select id="selectByFoundationYear" resultMap="DepartmentMap">
-        SELECT * FROM department WHERE foundation_year = #{foundationYear}
+        SELECT * FROM departmentId WHERE foundation_year = #{foundationYear}
     </select>
     <select id="selectByTitle" resultMap="DepartmentMap">
-   SELECT * FROM department WHERE title = #{title}
+   SELECT * FROM departmentId WHERE title = #{title}
     </select>
 
     <insert id="insert"
@@ -39,7 +46,7 @@
             statementType="PREPARED"
             keyProperty="id"
             useGeneratedKeys="true">
-        insert into department (title, address, foundation_year)
+        insert into departmentId (title, address, foundation_year)
         values (
         #{title, jdbcType=VARCHAR},
         #{address, jdbcType=VARCHAR},
@@ -48,7 +55,7 @@
     </insert>
 
     <update id="update" parameterType="DepartmentEntity">
-        update department
+        update departmentId
         SET
            title = #{title, jdbcType=VARCHAR},
            address = #{address, jdbcType=VARCHAR},

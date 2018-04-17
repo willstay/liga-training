@@ -16,7 +16,7 @@
             <properties>
                 <liquibase.url>jdbc:postgresql://127.0.0.1:5432/postgres</liquibase.url>
                 <liquibase.username>postgres</liquibase.username>
-                <liquibase.password>q</liquibase.password>
+                <liquibase.password>12345678</liquibase.password>
                 <liquibase.schema>liga</liquibase.schema>
                 <liquibase.driver>org.postgresql.Driver</liquibase.driver>
             </properties>
@@ -82,5 +82,4 @@
             <version>3.16.1</version>
         </dependency>
     </dependencies>
-
 </project>

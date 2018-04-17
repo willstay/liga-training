@@ -5,6 +5,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
@@ -17,6 +18,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan({"ru.liga.mybatis.dao"})
+@ComponentScan("ru.liga.mybatis.*")
 @PropertySource("classpath:application.properties")
 public class TestDaoSpringConfig {
 

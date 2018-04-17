@@ -23,21 +23,24 @@ public class DepartmentDao {
     }
 
     public DepartmentEntity insert(DepartmentEntity entity) {
-        String sqlInsert = "INSERT INTO department (title, address, foundation_year)"
-                + " VALUES (?, ?, ?)";
-        jdbcTemplate.update(sqlInsert, entity.getTitle(),
+        String sqlInsert = "INSERT INTO liga.departmentid (id, title, address, foundation_year)"
+                + " VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sqlInsert,
+                entity.getId(),
+                entity.getTitle(),
                 entity.getAddress(),
                 entity.getFoundationYear());
         return entity;
     }
 
     public DepartmentEntity update(DepartmentEntity entity) {
-        String sqlUpdate = "update department set" +
+        String sqlUpdate = "update liga.departmentid set" +
                 " title = ?," +
                 " address = ?," +
                 " foundation_year = ?" +
                 " where id = ?";
-        jdbcTemplate.update(sqlUpdate, entity.getTitle(),
+        jdbcTemplate.update(sqlUpdate,
+                entity.getTitle(),
                 entity.getAddress(),
                 entity.getFoundationYear(),
                 entity.getId());
@@ -45,26 +48,26 @@ public class DepartmentDao {
     }
 
     public void delete(Long entityId) {
-        String sqlDelete = "delete from department where id = ?";
+        String sqlDelete = "delete from liga.departmentid where id = ?";
         jdbcTemplate.update(sqlDelete, new Object[]{entityId});
     }
 
     public DepartmentEntity findById(Long id) {
-        String sql = "SELECT * FROM department WHERE ID = ?";
+        String sql = "SELECT * FROM liga.departmentid WHERE ID = ?";
         List<DepartmentEntity> entities = jdbcTemplate.query(
                 sql, new Object[]{id}, new DepartmentMapper());
         return entities.isEmpty() ? null : entities.get(0);
     }
 
     public List<DepartmentEntity> findByFoundationYear(Integer year) {
-        String sql = "SELECT * FROM department WHERE foundation_year = ?";
+        String sql = "SELECT * FROM liga.departmentid WHERE foundation_year = ?";
         List<DepartmentEntity> entities = jdbcTemplate.query(
                 sql, new Object[]{year}, new DepartmentMapper());
         return entities;
     }
 
     public DepartmentEntity findByTitle(String title) {
-        String sql = "SELECT * FROM department WHERE title = ?";
+        String sql = "SELECT * FROM liga.departmentid WHERE title = ?";
         List<DepartmentEntity> entities = jdbcTemplate.query(
                 sql, new Object[]{title}, new DepartmentMapper());
         return entities.isEmpty() ? null : entities.get(0);

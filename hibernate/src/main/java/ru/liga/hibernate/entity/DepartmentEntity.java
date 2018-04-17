@@ -24,6 +24,8 @@ public class DepartmentEntity implements Serializable {
     private Integer foundationYear;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<EmployeeEntity> employees;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<StudentEntity> students;
 
 
     public DepartmentEntity(Long id, String title, String address, Integer foundationYear, List<EmployeeEntity> employees, List<StudentEntity> students) {
@@ -32,7 +34,7 @@ public class DepartmentEntity implements Serializable {
         this.address = address;
         this.foundationYear = foundationYear;
         this.employees = employees;
-//        this.students = students;
+       this.students = students;
     }
 
     public DepartmentEntity() {
@@ -77,12 +79,12 @@ public class DepartmentEntity implements Serializable {
     public void setEmployees(List<EmployeeEntity> employees) {
         this.employees = employees;
     }
-//
-//    public List<StudentEntity> getStudents() {
-//        return students;
-//    }
-//
-//    public void setStudents(List<StudentEntity> students) {
-//        this.students = students;
-//    }
+
+    public List<StudentEntity> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StudentEntity> students) {
+        this.students = students;
+    }
 }

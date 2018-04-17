@@ -23,4 +23,35 @@
         SELECT * FROM employee WHERE department_id = #{departmentId}
     </select>
 
+    <insert id="insert"
+            parameterType="EmployeeEntity"
+            statementType="PREPARED"
+            keyProperty="id"
+            useGeneratedKeys="true">
+        insert into employee (fio, gender, department_id, degree, position, birthday)
+        values (
+        #{fio, jdbcType=VARCHAR},
+        #{gender, jdbcType=VARCHAR},
+        #{departmentId, jdbcType=BIGINT},
+        #{degree, jdbcType=VARCHAR},
+        #{position, jdbcType=VARCHAR},
+        #{birthday, jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <delete id="delete" parameterType="long">
+        delete from employee where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="EmployeeEntity">
+        update employee
+        SET
+        fio = #{fio, jdbcType=VARCHAR},
+        gender = #{gender, jdbcType=VARCHAR},
+        department_id = #{departmentId, jdbcType=BIGINT},
+        degree = #{degree, jdbcType=VARCHAR},
+        position = #{position, jdbcType=VARCHAR},
+        birthday = #{birthday, jdbcType=TIMESTAMP}
+        WHERE id = #{id}
+    </update>
+
 </mapper>

@@ -175,3 +175,10 @@ INSERT INTO student (fio, gender, department_id, course, birthday)
 VALUES('Морозова	Анастасия	Олеговна','FEMALE', 'Исторический', 4, to_date('1999-06-05', 'YYYY-MM-DD'));
 INSERT INTO student (fio, gender, department_id, course, birthday)
 VALUES('Никитухина	Валентина	Николаевна','FEMALE', 'Исторический', 4, to_date('1999-06-05', 'YYYY-MM-DD'));
+
+ALTER TABLE student ADD COLUMN department_id BIGINT;
+
+UPDATE student as st
+SET department_id = (SELECT id FROM liga.departmentId WHERE st.department_name = title);
+
+ALTER TABLE student DROP COLUMN department_name;
